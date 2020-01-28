@@ -19,8 +19,18 @@ export default props => {
 
   return (
     <section className="animal">
+      <h3 className="animal__name">{animal.name}</h3>
       <div className="animal__owner">Owner: {customer.name}</div>
       <div className="animal__location">Location: {location.name}</div>
+      <div className="animal__treatment">Treatment: {animal.treatment}</div>
+
+      <button
+        onClick={() => {
+          props.history.push(`/animals/edit/${animal.id}`);
+        }}
+      >
+        Edit
+      </button>
       <button
         onClick={() => {
           deleteAnimal(animal).then(() => {

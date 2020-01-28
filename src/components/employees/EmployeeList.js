@@ -22,7 +22,7 @@ export default props => {
           );
 
           return (
-            <Employee
+            <Employee {...props}
               key={employee.id}
               employee={employee}
               location={location}

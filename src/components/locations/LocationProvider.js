@@ -15,7 +15,7 @@ export const LocationProvider = (props) => {
 
 
     const getLocations = () => {
-        return fetch("http://localhost:8088/locations")
+        return fetch("http://localhost:8088/locations?_embed=employees&_embed=animals")
             .then(res => res.json())
             .then(setLocations)
             // .then((parsedLocations) => { setLocations (parsedLocations)}) <- what setLocations does in vanilla js
