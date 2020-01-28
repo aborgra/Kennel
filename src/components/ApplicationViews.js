@@ -11,6 +11,7 @@ import EmployeeList from "./employees/EmployeeList";
 import EmployeeForm from "./employees/EmployeeForm";
 import Login from "./auth/Login";
 import AnimalForm from "./animal/AnimalForm";
+import AnimalDetails from "./animal/AnimalDetails";
 
 export default props => {
   return (
@@ -44,11 +45,15 @@ export default props => {
                 return <Login {...props} />;
               }}
             />
-
             <Route
               exact
-              path="/animal/create"
+              path="/animals/create"
               render={props => <AnimalForm {...props} />}
+            />
+            <Route
+              exact
+              path="/animals/:animalId(\d+)"
+              render={props => <AnimalDetails {...props} />}
             />
           </CustomerProvider>
         </LocationProvider>
